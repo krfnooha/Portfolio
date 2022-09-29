@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" media="screen and (max-width:800px" href="Tab.css">
+    <link rel="stylesheet" media="screen and (max-width:530px" href="phone.css">
+    <script src="https://kit.fontawesome.com/7486c7e5eb.js" crossorigin="anonymous"></script>
+     <title>Portfolio</title>
+  </head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#qualification">Qualification</a></li>
+            <li><a href="#contact">Contact Me</a></li>
+        </ul>
+    </nav>
+    <section id="home">
+        <div class="main">
+            <h1 class="headings">Hi, <br>I Am<br>K.R.F.NOOHA</h1>
+            <a href="images/CV.pdf" download class="btn">My Resume</a>
+            </div>
+    </section>
+    <section id="about">
+        <h1 class="headings">ABOUT ME</h1>
+        <div id="pic">
+           <img src="images/me.webp" alt="">
+            <div id="intro">
+                <h2>K.R.F.NOOHA</h2>
+                <p>
+                I am a undergraduate student of BSE(Bachelor of Software Engineering) in OUSL. 
+                I am a hard working, honest individual.I am a good timekeeper, always willing to learn new skills. 
+                I am friendly, helpful and polite, have a good sense of humour.
+                I have developed good planning & organisational skills and am confident working independently or as part of a team. 
+                I am outgoing and tactful, and able to listen effectively when solving problems. </p>
+            </div>
+
+        </div>
+    </section>
+    <section id="qualification">
+        <h1 class="headings">QUALIFICATIONS</h1>
+        <div id="pic">
+            <img src="images/study.jpeg" alt="">
+        <div id="studies">
+            <h2>My Qualifications</h2>
+            <p>•UNDERGRADUATE IN BSE (BACHELOR OF SOFTWARE ENGINEERING) AT OPEN UNIVERSITY OF SRILANKA – READING<br>
+               •DIPLOMA IN ENGLISH AT ACHE<br>
+               •G.C.E(A/L) EXAMINATION IN 2020 (ARTS)<br>
+               •G.C.E (O/L) EXAMINATION IN 2017<br>
+                </p>
+</div>
+    </section>
+    <section id="contact">
+        <h1 class="headings">Contact Me</h1>
+         <div id="details">
+            <p> <ion-icon name="mail-outline"></ion-icon> krfnooha@gmail.com</p>
+            <p><ion-icon name="call-outline"></ion-icon> 0721250341</p>
+          </div>
+         <form action="" name="submit-to-google-sheet" class="form">
+                <input type="text" name="Name" class="input" placeholder="Enter your name" >
+                <input type="email" name="email" class="input" placeholder="Enter your email" >
+                <textarea name="Message" id="msg" cols="30" rows="10" placeholder="Enter your message"></textarea>
+                <button type="submit" id="submit">Submit</button>
+            </form>
+            <span id="m1"></span>
+        </div>
+   </section>
+   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        const scriptURL = "https://script.google.com/macros/s/AKfycbyfNGaHOdAtroubOe-ze8KNRXuq0IF_vh8KhQHc6MVaDRSD9TetcXojhuXAm_Jbxvi8zg/exec"
+        const form = document.forms['submit-to-google-sheet']
+        const m1 = document.getElementById("m1")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                m1.innerHTML="Message sent successfully"
+                setTimeout(function(){
+                    m1.innerHTML=""
+                },5000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+</body>
+</html>

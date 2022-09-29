@@ -1,0 +1,33 @@
+/*Home*/
+#home{
+    height: 820px;
+}
+.headings{
+    font-size: 1.7rem;
+}
+/*About*/
+#pic img{
+    width: 300px;
+    height: 175px;
+}
+#intro h2{
+    font-size: 1.5rem;
+}
+/*Qualification*/
+#pic img{
+    width: 300px;
+    height: 175px;
+}
+#studies h2{
+    font-size: 1.5rem;
+}
+/*Contact*/
+.input{
+    width: 80%;
+}
+#msg{
+    width: 70%;
+}
+#submit{
+    width: 20%;
+}
